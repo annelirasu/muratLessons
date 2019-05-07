@@ -1,6 +1,8 @@
 package com.tallinn.six.recap;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task13 {
 
@@ -23,12 +25,21 @@ class Encryption{
         System.out.println("Which word do you want to encrypt?");
         Scanner scan=new Scanner(System.in);
         String word1=scan.nextLine();
+        Pattern pattern = Pattern.compile(word1,Pattern.CASE_INSENSITIVE);
+
         System.out.println("Which word do you want the word change to?");
         String word2=scan.nextLine();
+
         System.out.println("What is the sentence?");
         String sentence=scan.nextLine();
+        Matcher m = pattern.matcher(sentence);
         System.out.println(sentence);
-        String newSentence=sentence.replaceAll(word1,word2);
-        System.out.println(newSentence);
+        if(m.find()){
+            String found=m.group();
+            String newSentence=sentence.replaceAll(found,word2);
+            System.out.println(newSentence);
+        }
+      //  String newSentence=sentence.replaceAll(word1,word2);
+
     }
 }

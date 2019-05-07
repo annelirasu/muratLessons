@@ -23,7 +23,14 @@ public class Task10 {
             }
             if (order.equalsIgnoreCase("add")) {
 
-                if (indexCounter > 4 && availableSlots.isEmpty()) {
+                int indexOfNextEmptyString=-1;
+                    for (int j = 0; j < words.length; j++) {
+                        if ("".equalsIgnoreCase(words[j])) {
+                            indexOfNextEmptyString = j;
+                        }
+                    }
+
+                if (indexCounter > 4 && indexOfNextEmptyString==-1) {
                     System.out.println("Can't add, there is no more space");
                 } else {
                     System.out.println("Please write something for adding: ");
@@ -41,8 +48,7 @@ public class Task10 {
                             System.out.println("Item added");
                             break;
                         } else {
-                            int x = availableSlots.pop();
-                            words[x] = s;
+                            words[indexOfNextEmptyString] = s;
                             System.out.println("Item added");
                             break;
                         }
@@ -66,7 +72,6 @@ public class Task10 {
                         System.out.println("Can't remove, item not in array");
                     } else {
                         words[foundIndex] = "";
-                        availableSlots.push(foundIndex);
                         System.out.println("Item removed.");
                     }
                 }
