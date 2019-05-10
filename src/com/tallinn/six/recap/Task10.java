@@ -1,7 +1,6 @@
 package com.tallinn.six.recap;
 
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Task10 {
     public static void main(String[] args) {
@@ -9,8 +8,7 @@ public class Task10 {
 
         Scanner scan = new Scanner(System.in);
         int indexCounter = 0;
-        Stack<Integer> availableSlots = new Stack<>();
-        while (true) {
+            while (true) {
             System.out.println("What you wanna do? add/remove/view/search/done");
             String order = scan.nextLine();
 
