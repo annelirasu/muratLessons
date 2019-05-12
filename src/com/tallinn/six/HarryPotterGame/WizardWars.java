@@ -58,7 +58,6 @@ public class WizardWars {
                 System.out.println("Wrong Spell: " + spellWord + ",  use the one you bought: ");
                 spellWord = scan.nextLine();
             }
-
             continues = uts.battle(wiz, op, spellWord);//nullpointer exception
         }
         //küsi uuesti spelli, kontrolli jälle olemasolu...
