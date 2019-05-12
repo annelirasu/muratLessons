@@ -41,17 +41,11 @@ public class Wizard {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public void setSpell(String spellName) {
         boughtSpells.add(spellName);
@@ -66,12 +60,13 @@ public class Wizard {
     }
 
     public boolean isBoughtSpell(String spellName) {
-        for (String name : this.boughtSpells
+     /*   for (String name : this.boughtSpells
         ) {
             if (spellName.equals(name)) {
                 return true;
             }
-        }
+        }*/
+     if(this.boughtSpells.contains(spellName)) return true;
         return false;
     }
 }

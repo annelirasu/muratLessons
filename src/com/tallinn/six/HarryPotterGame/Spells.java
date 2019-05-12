@@ -1,7 +1,6 @@
 package com.tallinn.six.HarryPotterGame;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Spells {
     /**
@@ -36,12 +35,13 @@ public class Spells {
 
 
     public  Spell getSpell(String spellName) {
-        for (Map.Entry<String, Spell> entry : spells.entrySet()) {
+       /* for (Map.Entry<String, Spell> entry : spells.entrySet()) {
             if (spellName.equals(entry.getKey())) {
                 return entry.getValue();
             }
-        }
-        return null;
+        }*/
+       return spells.get(spellName);
+
     }
 
 

@@ -67,12 +67,16 @@ public class WizardShop {
     }
 
     private boolean spellNameExsists(String spellName) {
-        for (Map.Entry<String, Integer> entry : spellsInShop.entrySet()) {
+    /*    for (Map.Entry<String, Integer> entry : spellsInShop.entrySet()) {
             if (spellName.equals(entry.getKey())) {
                 return true;
             }
 
-        }
-        return false;
+        }*/
+    if(spellsInShop.containsKey(spellName)){
+        return true;
     }
+    return false;
+    }
+
 }
