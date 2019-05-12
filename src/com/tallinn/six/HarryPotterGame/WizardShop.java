@@ -22,7 +22,7 @@ public class WizardShop {
 
 
     public WizardShop() {
-        spellsInShop.put("Lacarnum Inflamarae", 25);
+        spellsInShop.put("Lacranum Inflamarae", 25);
         spellsInShop.put("Lumos Solem", 45);
         spellsInShop.put("Everte Statum", 45);
         spellsInShop.put("Arania Exumai", 50);

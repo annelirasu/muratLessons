@@ -36,13 +36,11 @@ public class CharacterCreation {
             System.out.println(whichName + " must not contain any space");
             return false;
         }
-        String patternForNr = "\\d+";
+        String patternForNr = "[[:punct:]]+\\d+";
         Pattern forNumber = Pattern.compile(patternForNr);
         Matcher m2 = forNumber.matcher(name);
-        String patternForPunctuation = "([[:punct:]]+)";
-        Pattern forPunctuation = Pattern.compile(patternForNr);
-        Matcher m3 = forPunctuation.matcher(name);
-        if (m2.find()||m3.find()) {
+
+        if (m2.find()) {
             System.out.println(whichName + " is not suitable. No numbers/punctuations");
             return false;
         } else {
@@ -55,7 +53,20 @@ public class CharacterCreation {
     }
 
     public static boolean validateLastName(String name) {
-        return validateName("Last name", name);
+        if (name.equalsIgnoreCase("")) {
+            System.out.println("Surname is not suitable. You did not enter any name");
+            return false;
+        }
+        String patternForNr = "[[:punct:]]+\\d+";
+        Pattern forNumber = Pattern.compile(patternForNr);
+        Matcher m2 = forNumber.matcher(name);
+
+        if (m2.find()) {
+            System.out.println("Surname is not suitable. No numbers/punctuations");
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public String eraseNonLetters(String name){
