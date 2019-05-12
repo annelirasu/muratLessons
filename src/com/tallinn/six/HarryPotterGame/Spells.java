@@ -2,7 +2,7 @@ package com.tallinn.six.HarryPotterGame;
 
 import java.util.HashMap;
 
-public class Spells {
+ class Spells {
     /**
      * Contains the spells
      * Lacarnum Inflamarae => 25(Price),10(min),16(max),70(success),1(speed rate)
@@ -15,9 +15,9 @@ public class Spells {
      * getSpell Method and parameter will be SpellName(String) and it will return the Spell Object.
      */
 
-    public static HashMap<String, Spell> spells = new HashMap<>();
+    private static HashMap<String, Spell> spells = new HashMap<>();
 
-    public Spells() {
+    Spells() {
         Spell lacranum = new Spell("Lacranum Inflamarae", 25, 10, 16, 70, 1);
         Spell lumos = new Spell("Lumos Solem", 45, 17, 23, 65, 2);
         Spell everte = new Spell("Everte Statum", 45, 23, 29, 60, 3);
@@ -34,7 +34,7 @@ public class Spells {
     }
 
 
-    public  Spell getSpell(String spellName) {
+     Spell getSpell(String spellName) {
        /* for (Map.Entry<String, Spell> entry : spells.entrySet()) {
             if (spellName.equals(entry.getKey())) {
                 return entry.getValue();

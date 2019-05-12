@@ -3,18 +3,6 @@ package com.tallinn.six.HarryPotterGame;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * WizardWars MAIN METHOD... First welcome the user
- * "Welcome to Wizard Wars. Lets create our character"
- * "Please enter your characters' first name"
- * "Please enter your characters' surname"
- * <p>
- * welcome name and surname prepare to die...
- * "Welcome to Wizard Shop. " + "Can I take your order? Write spell Name to buy."
- * <p>
- * prınt all the spells he/she knowsç
- */
-
 public class WizardWars {
     public static Scanner scan = new Scanner(System.in);
 
@@ -61,7 +49,7 @@ public class WizardWars {
             spellWord = scan.nextLine();
         }
         SpellUtilities uts = new SpellUtilities();
-        boolean continues = uts.battle(wiz, op, spellWord);;//nullpointer exeption
+        boolean continues = uts.battle(wiz, op, spellWord);//nullpointer exeption
         while (continues) {
 
             System.out.println("Battle continues - say your spell: ");

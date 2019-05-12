@@ -2,7 +2,7 @@ package com.tallinn.six.HarryPotterGame;
 
 import java.util.ArrayList;
 
-public class Wizard {
+ class Wizard {
     /**
      * health 100 default value
      * money 100 default value
@@ -16,57 +16,57 @@ public class Wizard {
     private int money = 100;
     private ArrayList<String> boughtSpells = new ArrayList<>();
 
-    public Wizard(String firstName, String lastName) {
+     Wizard(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public int getHealth() {
+     int getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+     void setHealth(int health) {
         this.health = health;
     }
 
-    public int getMoney() {
+     int getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
+    void setMoney(int money) {
         this.money = money;
     }
 
-    public String getFirstName() {
+    String getFirstName() {
         return firstName;
     }
 
 
-    public String getLastName() {
+    String getLastName() {
         return lastName;
     }
 
 
-    public void setSpell(String spellName) {
+     void setSpell(String spellName) {
         boughtSpells.add(spellName);
     }
 
-    public ArrayList<String> getBoughtSpells() {
+     ArrayList<String> getBoughtSpells() {
         return boughtSpells;
     }
 
-    public void setBoughtSpells(ArrayList<String> boughtSpells) {
+     void setBoughtSpells(ArrayList<String> boughtSpells) {
         this.boughtSpells = boughtSpells;
     }
 
-    public boolean isBoughtSpell(String spellName) {
+    boolean isBoughtSpell(String spellName) {
      /*   for (String name : this.boughtSpells
         ) {
             if (spellName.equals(name)) {
                 return true;
             }
         }*/
-     if(this.boughtSpells.contains(spellName)) return true;
-        return false;
+
+        return this.boughtSpells.contains(spellName);
     }
 }

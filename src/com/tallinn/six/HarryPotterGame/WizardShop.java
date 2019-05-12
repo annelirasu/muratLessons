@@ -17,11 +17,11 @@ import java.util.Map;
  * buy method will be void... Its parameters are String requestedSpell and Wizard object.
  */
 
-public class WizardShop {
+ class WizardShop {
     private HashMap<String, Integer> spellsInShop = new HashMap<>();
 
 
-    public WizardShop() {
+     WizardShop() {
         spellsInShop.put("Lacranum Inflamarae", 25);
         spellsInShop.put("Lumos Solem", 45);
         spellsInShop.put("Everte Statum", 45);
@@ -32,7 +32,7 @@ public class WizardShop {
 
     }
 
-    public void printSpellsWithPrices() {
+     void printSpellsWithPrices() {
         for (Map.Entry<String, Integer> entry : spellsInShop.entrySet()) {
             String spellName = entry.getKey();
             int price = entry.getValue();
@@ -40,7 +40,7 @@ public class WizardShop {
         }
     }
 
-    public void buySpell(String spellName, Wizard wiz) {
+     void buySpell(String spellName, Wizard wiz) {
 
         if (spellNameExsists(spellName)) {
             int priceOfSpell = 0;
@@ -73,10 +73,7 @@ public class WizardShop {
             }
 
         }*/
-    if(spellsInShop.containsKey(spellName)){
-        return true;
-    }
-    return false;
+        return spellsInShop.containsKey(spellName);
     }
 
 }

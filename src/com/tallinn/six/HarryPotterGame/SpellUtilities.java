@@ -2,7 +2,7 @@ package com.tallinn.six.HarryPotterGame;
 
 import java.util.Random;
 
-public class SpellUtilities {
+class SpellUtilities {
     private static Spells spells = new Spells();
 
     /**
@@ -17,28 +17,28 @@ public class SpellUtilities {
      * cast method it will return integer. .... It will have String parameter spellName
      */
 
-    public int getRandomNumberInRange(int min, int max) {
+     int getRandomNumberInRange(int min, int max) {
         Random rand = new Random();
         return rand.nextInt((max - min) + 1) + min;
     }
 
-    public int castDamage(String nameOfSpell) {
-        Spell spell = this.spells.getSpell(nameOfSpell);
+    int castDamage(String nameOfSpell) {
+        Spell spell = spells.getSpell(nameOfSpell);
         return getRandomNumberInRange(spell.getMinSpellPower(), spell.getMaxSpellPower());
 
     }
 
-    public int castHealing(String nameOfSpell) {
-        Spell spell = this.spells.getSpell(nameOfSpell);
+    int castHealing(String nameOfSpell) {
+        Spell spell = spells.getSpell(nameOfSpell);
         return getRandomNumberInRange(spell.getMinSpellPower(), spell.getMaxSpellPower());
 
     }
 
-    public boolean battle(Wizard wiz, Opponent op, String wizSpell) {
+    boolean battle(Wizard wiz, Opponent op, String wizSpell) {
         String opsSpell = op.decideSpellName(wiz);
         System.out.println(op.getFirstName() +" has spell "+opsSpell);//temporary
-        int wizSpellSpeed = this.spells.getSpell(wizSpell).getSpeedRate();
-        int opSpellSpeed = this.spells.getSpell(opsSpell).getSpeedRate();// nullpointer exection
+        int wizSpellSpeed = spells.getSpell(wizSpell).getSpeedRate();
+        int opSpellSpeed = spells.getSpell(opsSpell).getSpeedRate();// nullpointer exection
         if (wizSpellSpeed > opSpellSpeed) {
            return castSpell(wizSpell, wiz,op);
 
@@ -55,7 +55,7 @@ public class SpellUtilities {
         }
     }
 
-    public boolean castSpell(String spellName, Wizard  wiz1, Wizard opponent){
+    boolean castSpell(String spellName, Wizard  wiz1, Wizard opponent){
         int rand=getRandomNumberInRange(0,100);
         if(spellName.equals("Vulnera Sanentur")){
             if(rand<spells.getSpell(spellName).getSuccessRate()){
